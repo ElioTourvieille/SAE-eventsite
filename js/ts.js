@@ -9,7 +9,7 @@ const typeIt = new TypeIt("#title", {
     .pause(200)
     .move(null, { to: "END" })
     .break({ delay: 500 })
-    .type('<em><strong class="font-semibold">La meilleure école des médias créatifs.</strong></em>')
+    .type('La meilleure école des médias créatifs.')
     .break({ delay: 500 })
     .break({ delay: 500 })
     .type('Ceci est un élément h1 (titre), il ne doit y en avoir qu\'un par page.')
