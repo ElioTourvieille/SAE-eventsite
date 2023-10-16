@@ -1,0 +1,490 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+    --white: #f2f4f3;
+    --sae-color: #753bbd;
+}
+
+body, .web-page {
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+/*
+.hidden {
+    opacity: 0;
+}
+*/
+.hovered {
+    outline: var(--white) solid 3px;
+}
+
+.dragable {
+    user-select: none;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.left-zone{
+    grid-column: 1/2;
+    background-color: lightgray;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.move-hint{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.web-page{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.web-page *{
+    margin: 5px;
+}
+
+#nav-container{
+    background-color: var(--sae-color);
+    padding: 5px 14px;
+    display: flex;
+    flex-direction: column;
+    transition: outline 100ms ease-out;
+}
+
+#nav-container:hover{
+    outline: var(--white) solid 3px;
+}
+
+#nav-container p{
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+
+}
+
+#nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#nav-container a {
+    display : inline-block;
+    color: white; 
+    text-align: center; 
+    padding: 8px 10px; 
+    text-decoration: none;
+}
+
+#header{
+    padding: 60px;
+    transition: outline 100ms ease-out;
+}
+
+#header:hover{
+    outline: var(--white) solid 3px;
+}
+
+/*#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    transition: outline 100ms ease-out;
+}
+
+#title:hover{
+    outline: var(--white) solid 3px;
+}*/
+
+.articles-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article{
+    width: fit-content;
+    height: 15em;
+    background-color: #313131;
+}
+
+#article-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    max-width: 80%;
+    overflow: hidden;
+}
+
+#article-1 *{
+    margin: 0;
+    padding: 10px;
+}
+
+.article-title {
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#article-1-text{
+    background-color: rgb(38, 38, 38);
+    width: 100%;
+    height: 50%;
+}
+
+#link{
+    width: 40%;
+    height: 20%;
+    padding: 0;
+}
+
+#link a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
+
+#article-2{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 30%;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+#article-2 {
+    height: 70%;
+    background-color: #292929;
+    width: 80%;
+}
+
+#image img{
+    padding: 0;
+    width: auto;
+    height: 100%;
+    overflow: hidden;    
+    object-fit: contain;
+    opacity: inherit;
+    border-radius: inherit;
+    align-self: center;
+}
+
+#footer *{
+    margin: 0;
+    padding: 0;
+}
+#footer{
+    background-color: var(--sae-color);
+    display: flex;
+    justify-content: flex-start;
+    transition: outline 100ms ease-out;
+    padding: 20px;
+}
+
+#footer:hover{
+    outline: var(--white) solid 3px;
+}
+
+.footer-column-container{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.footer-title, .footer-link{
+    margin: 0;
+}
+
+.footer-title{
+    font-weight: 900;
+}
+
+.footer-link{
+    cursor: pointer;
+    transition: transform 100ms ease-out;
+    
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+.footer-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: auto !important;
+}
+
+.footer-form-title{
+    font-weight: 900;
+}
+
+.form-input-container{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.form-input-container input{
+    outline: none;
+    padding: 4px 8px 4px 1px !important;
+}
+
+.form-input-container button{
+    border: none;
+    background-color: var(--white);
+    color: #2C2C2C;
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+    padding: 5px 8px 5px 8px !important;
+}
+
+.form-input-container button:hover{
+    background-color: #2C2C2C;
+    color: var(--white);
+}
+
+/*
+.footer-map-container{
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+.map{
+    width: 96%;
+    height: 10em;
+}
+*/
+
+.right-zone{
+    z-index: 10;
+    position: relative;
+    grid-column: 2/3;
+    background-color: #2C2C2C;
+    box-sizing: border-box;
+}
+
+.right-zone-html{
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.right-zone-css {
+    padding: 40px;
+    height: 100vh;
+    background-color: #2C2C2C;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-direction: column;
+}
+
+#cssBtn {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: bold;
+}
+
+.right-title, .right-subtitle{
+    text-align: center;
+}
+
+.item{
+    background-color: #f2f4f333;
+    padding: 20px;
+    color: #f2f4f3;
+    transition: height 300ms ease-out;
+    width: 100%;
+    touch-action: none;
+    cursor: move;
+    /*animation: wiggle 0.5s infinite;*/
+}
+
+.item-title{
+    color: inherit;
+}
+
+.item-description{
+    color: inherit;
+    height: auto;
+    transition: height 300ms ease-out;
+    overflow: hidden;
+    display: none;
+}
+
+.right-panel-button{
+    display: block;
+    position: absolute;
+    top: 0; left: -60px;
+    width: 60px; height: 60px;
+    background-color: #2C2C2C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: width 300ms ease-out, left 300ms ease-out;
+}
+
+.panel-second{
+    top: 60px;
+}
+
+.right-panel-button img{
+    aspect-ratio: 1/1;
+    height: 100%;
+}
+
+.panel-not-active{
+    background-color: #7f7f7f;
+    transition: background-color 300ms ease-out, opacity 300ms ease-out;
+    opacity: 0.5;
+}
+
+.panel-not-active:hover{
+    background-color: #2C2C2C;
+    opacity: 1;
+}
+
+@keyframes appear{
+    0%{
+        transform: scale(1.5);
+    }
+    75%{
+        transform: scale(1);
+        border: none;
+    }
+    80%{
+        border: solid red 50px outset;
+        
+    }
+    100%{
+        border: none;
+    }
+
+
+}
+
+
+/* ------------------ CSS SETTINGS ------------------ */
+button {
+    cursor: pointer;
+}
+
+.spec  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.3em;
+}
+
+.spec > button 
+{
+    margin: 0 5px;
+    color: black;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+
+
+.spec > .btn-square
+{
+    height: 20px;
+    width: 20px;
+    overflow: visible;
+    border: none;
+    cursor: pointer;
+}
+
+.spec > .btn-text {
+    background-color: var(--white);
+    padding: 0.1em 0.3em;
+    border: none
+}
+
+.spec > .text 
+{
+    margin-left: 1.5em;
+    color: #8FCAF5;
+}
+
+.spec > input[type="range"] 
+{
+    width: 7em;
+    margin-left: 1em;
+}
+
+.property .spec button[selected] 
+{
+    outline: red solid 2px;
+}
+.property {
+    font-size: 1.3em;
+}
+
+.property > p {
+    color: #d2bb85;
+    font-weight: bold;
+}
+
+@keyframes wiggle {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SAE Stand - The Block</title>
+        <meta name="description" content="Apprenez le code grâce à la SAE.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="./images/icon.png">
+        <!-- Couleur du thème-->
+        <meta content="#000000" data-react-helmet="true" name="theme-color">
+        <!-- Style et polices-->
+        <link rel="stylesheet" href="./stylesheet/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="main-grid">
+
+            <div class="left-zone">
+                <div class="move-hint">
+                    Glisse un élément pour créer la page!
+                </div>
+                <div class="web-page hidden">
+                <nav id="nav-container" class="hidden">
+                    <a href="#">Accueil</a>
+                    <a href="#">Titre</a>
+                    <a href="#">Article 1</a>
+                    <a href="#">Footer</a>
+                </nav>
+                    <section id="header" class="hidden">
+                        <h1 id="title"></h1>
+                    </section>
+                    
+                    
+                    <div class="articles-container">
+                        <article id="article-1" class="hidden">
+                            <h2 class="article-title"> Article 1</h2>
+                            <p id="article-1-text">L'article est une balise. Voilà j'avais pas d'inspi.</p>
+                            <div id="link"><a href="https://www.sae.edu/ch-ge" target="_blank">SAE Institute</a></div>
+                        </article>
+
+                        <article id="article-2" class="hidden">
+                            <h2 class="article-title">Article 2</h2>
+                            <div class="content">
+                                <p id="article-2-text">L'article est une balise. Voilà j'avais pas d'inspi.</p>
+                                <img src="img/sae-logo.png" alt="image du site">
+                            </div>
+                        </article>
+                    </div>
+
+                    <footer id="footer" class="hidden">
+                        <div class="footer-column-container">
+                            <p class="footer-title">Contact</p>
+                            <a class="footer-link">Formulaire</a>
+                            <a class="footer-link">Adresse</a>
+                        </div>
+                        <div class="footer-column-container">
+                            <p class="footer-title">Impressum</p>
+                            <a class="footer-link">Conditions</a>
+                            <a class="footer-link">Juridiction</a>
+                        </div>
+                        <div class="footer-form-container">
+                            <p class="footer-form-title">S'abonner</p>
+                            <div class="form-input-container">
+                                <input type="email" name="email" id="email" placeholder="Votre email">
+                                <button>Soumettre</button>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="footer-map-container">
+                            <h2>L'adresse de l'école</h2>
+                            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2762.266831613645!2d6.142523576754137!3d46.18524858504076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478c7adbb23cb62b%3A0x9d7cd44468ec73a7!2sSAE%20Institute%20Gen%C3%A8ve!5e0!3m2!1sfr!2sch!4v1697446178199!5m2!1sfr!2sch" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        -->
+                        
+                    </footer>
+                </div>
+            </div>
+
+            <div class="right-zone">
+                <section id="right-zone-html" class="right-zone-html">
+                    <h2 class="right-title">Pièces</h2>
+                    <p class="right-subtitle">Placez les pièces dans la section présente sur la partie gauche de votre écran.</p>
+                    <div class="item dragable" data-for="nav-container">
+                        <h3 class="item-title">Navbar</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>
+
+                    <div class="item dragable" data-for="header">
+                        <h3 class="item-title">Header</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>
+
+                    <div class="item dragable" data-for="article" data-number="1">
+                        <h3 class="item-title">Articles</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>
+
+                    <div class="item dragable" data-for="footer">
+                        <h3 class="item-title">Footer</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>
+
+                    <!--
+                       <div class="item dragable" data-for="link">
+                        <h3 class="item-title">a</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>
+                    <div class="item dragable" data-for="title">
+                        <h3 class="item-title">h1</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>    
+                    -->
+
+                    <!--
+                    <div class="item dragable" data-for="image">
+                        <h3 class="item-title">img</h3>
+                        <p class="item-description">Lorem ipsum dolor sit amet et je connais pas la suite donc je mets du texte.</p>
+                    </div>
+                    -->
+                </section>
+                <section id="right-zone-css" class="right-zone-css hidden">
+                    <h2 class="right-title">Styliser avec le CSS</h2>
+                    <p class="right-subtitle">Modifier le style des éléments en cliquant pour changer sa valeur.</p>
+
+                    <!-- NAVBAR -->
+                    <div class="property hidden" data-for="nav-container">
+                        <p>nav {</p>
+                            <!-- background-color -->
+                            <div class="spec">
+                                <p class="text">background-color :</p>
+                                <button selected style="background-color: #753bbd;" class="bg-saecolor btn-square" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })"></button> 
+                                <button style="background-color: rgb(19, 19, 19);" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" class="bg-black btn-square"></button> 
+                                <button style="background-color: #44226D;" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" class="bg-saecolor2 btn-square"></button>
+                            </div>
+                            <!-- justify -->
+                            <div class="spec">
+                                <p class="text">justify-content :</p>
+                                <button selected onclick="updatePropertyBtn(this, { type: 'justifyContent', value: 'flex-start' })" class="btn-text">flex-start</button> 
+                                <button onclick="updatePropertyBtn(this, { type: 'justifyContent', value: 'center' })" class="btn-text">center</button> 
+                            </div>
+                            <!-- font weight -->
+                            <div class="spec">
+                                <p class="text">font-weight :</p>
+                                <button selected onclick="updatePropertyBtn(this, { type: 'fontWeight', value: 'normal' })" class="btn-text">normal</button> 
+                                <button onclick="updatePropertyBtn(this, { type: 'fontWeight', value: 'bolder' })" class="btn-text">bold</button> 
+                            </div>
+                        <p>}</p>
+                    </div>
+
+                    <!-- HEADER -->
+                    <div class="property hidden" data-for="header">
+                        <p>header {</p>
+
+                            <!-- Background color -->
+                            <div class="spec">
+                                <p class="text">background-color :</p>
+                                <button style="background-color: #000000" class="btn-square" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" selected></button>
+                                <button style="background-color: #44226D" class="btn-square" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })"></button>
+                                <button style="background-color: #753bbd" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" class="bg-saecolor2 btn-square"></button>
+                            </div>
+
+                            <!-- Color -->
+                            <div class="spec">
+                                <p class="text">color :</p>
+                                <button style="background-color: var(--white)" class="btn-square" onclick="updatePropertyBtn(this, { type: 'color', value: this.style.backgroundColor })" selected></button> 
+                                <button style="background-color: #C1EBDC" class="btn-square" onclick="updatePropertyBtn(this, { type: 'color', value: this.style.backgroundColor })"></button>
+                                <button style="background-color: #EAE0F5" class="btn-square" onclick="updatePropertyBtn(this, { type: 'color', value: this.style.backgroundColor })"></button>
+                            </div>
+
+                            <!-- Font size -->
+                            <div class="spec">
+                                <p class="text">font-size:</p>
+                                <input type="range" min="80" max="150" value="100" oninput="updatePropertySlider(this, { type: 'fontSize', unit:'em' })">
+                            </div>
+                        <p>}</p>
+                    </div>
+
+                    <!-- Article 1 -->
+                    <div class="property hidden" data-for="article-1">
+                        <p>article 1 {</p>
+                            <!-- Opacity -->
+                            <div class="spec">
+                                <p class="text">width :</p>
+                                <input type="range" min="1000" max="7000" value="1000" oninput="updatePropertySlider(this, { type: 'width', unit:'%' })">
+                            </div>
+
+                            <!-- Font Weight -->
+                            <div class="spec">
+                                <p class="text">font-weight :</p>
+                                <button onclick="updatePropertyBtn(this, { type: 'fontWeight', value: '100' })" class="btn-text">light</button>
+                                <button selected onclick="updatePropertyBtn(this, { type: 'fontWeight', value: 'normal' })" class="btn-text">normal</button> 
+                                <button onclick="updatePropertyBtn(this, { type: 'fontWeight', value: 'bolder' })" class="btn-text">bold</button> 
+                            </div>
+
+                            <!-- Border Radius -->
+                            <div class="spec">
+                                <p class="text">border-radius :</p>
+                                <input type="range" min="0" max="10000" value="0" oninput="updatePropertySlider(this, { type: 'borderRadius', unit:'px' })">
+                            </div>
+                        <p>}</p>
+                    </div>
+
+                    <!-- FOOTER -->
+                    <div class="property hidden" data-for="footer">
+                        <p>footer {</p>
+                            <!-- Background color -->
+                            <div class="spec">
+                                <p class="text">background-color :</p>
+                                <button selected style="background-color: #753bbd;" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" class="btn-square"></button> 
+                                <button style="background-color: #000;" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" class="btn-square"></button> 
+                                <button style="background-color: #44226D;" onclick="updatePropertyBtn(this, { type: 'backgroundColor', value: this.style.backgroundColor })" class="btn-square"></button>
+                            </div>
+                        <p>}</p>
+                    </div>
+                </section>
+                <a id="bloc-panel-button" class="right-panel-button" onclick="changePanel(`bloc`)"><img src="./img/puzzle.svg" alt="Bouton en forme de puzzle."></a>
+                <a id="style-panel-button" class="right-panel-button panel-second panel-not-active" onclick="changePanel(`style`)"><img src="./img/style.svg" alt="Bouton en forme de pinceau."></a>
+            </div>
+
+        </div>
+        
+        <script src="./dist/typeit.js"></script>
+        <script src="./dist/interactjs.js"></script>
+        
+        <script src="./js/drag.js"></script>
+        <script src="./js/css.js"></script>
+        <script src="./js/button.js"></script>
+        <script src="./js/ts.js"></script>
+        
+    </body>
+</html>
