@@ -1,0 +1,550 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    --white: #f2f4f3;
+    --sae-color: #753bbd;
+
+    user-select: none;
+}
+
+body, .web-page {
+    color: var(--white);
+    overflow-x: hidden;
+}
+.toast {
+    font-family: 'Inconsolata', monospace;
+}
+
+.reload-btn {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    z-index: 200;
+    bottom: 1em;
+    right: 1em;
+    padding: 1em;
+    cursor: pointer;
+}
+
+.reload-btn svg {
+    width: 2em;
+    height: 2em;
+    color: var(--white);
+}
+path {
+    color: white;
+}
+
+#confetti-canvas{
+    position: absolute;
+    width: 100vw;
+    height: 100dvh;
+    height: 100vh;
+    z-index: 100;
+    touch-action: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none !important;
+}
+/*
+.hidden {
+    opacity: 0;
+}
+*/
+.hovered {
+    outline: var(--white) solid 3px;
+}
+
+.dragable {
+    user-select: none;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    height: 100vh;
+    height: 100dvh;
+}
+
+.left-zone{
+    grid-column: 1/2;
+    background-color: lightgray;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.move-hint{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.web-page{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.web-page *{
+    margin: 5px;
+}
+/* fin copie*/
+
+#nav-container{
+    background-color: rgb(19, 19, 19);
+    padding: 5px 14px;
+    display: flex;
+    flex-direction: column;
+    transition: outline 100ms ease-out;
+}
+
+#nav-container:hover{
+    outline: var(--white) solid 3px;
+}
+
+#nav-container p{
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+
+}
+
+#nav-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#nav-container a {
+    display : inline-block;
+    color: white; 
+    text-align: center; 
+    padding: 8px 10px; 
+    text-decoration: none;
+}
+
+#nav-container a {
+    cursor: pointer;
+}
+
+#header{
+    padding: 60px;
+    transition: outline 100ms ease-out;
+    background-color: rgb(19, 19, 19);
+}
+
+#header:hover{
+    outline: var(--white) solid 3px;
+}
+
+/*#title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    transition: outline 100ms ease-out;
+}
+
+#title:hover{
+    outline: var(--white) solid 3px;
+}*/
+
+.articles-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article{
+    width: fit-content;
+    height: 20em;
+    background-color: #313131;
+    transition: outline 100ms ease-out;
+}
+
+article:hover{
+    outline: var(--white) solid 3px;
+}
+
+#article-1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    overflow: hidden;
+}
+
+#article-1 * {
+    margin: 0;
+}
+.articles-container p {
+    max-width: 800px;
+    padding: 1em;
+}
+.article-title {
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#article-1-text{
+    width: 100%;
+    height: 50%;
+}
+
+#link{
+    width: 100%;
+    height: 20%;
+    padding: 0;
+    background-color: rgb(38, 38, 38);
+}
+
+#link a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    text-align: center;
+}
+
+#link a:hover{
+    background-color: var(--sae-color);
+}
+
+#article-2 * {
+    margin: 0;
+}
+#article-2 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 45%;
+    overflow: hidden;
+}
+
+#article-2 .content {
+    display: flex;
+    height: 70%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+
+#article-2 img{
+    align-self: center;
+    height: 50%;
+    width: auto;
+    object-fit: contain;
+    opacity: inherit;
+    border-radius: inherit;
+    margin-right: 1em;
+}
+
+#footer *{
+    margin: 0;
+    padding: 0;
+}
+#footer{
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    justify-content: flex-start;
+    transition: outline 100ms ease-out;
+    padding: 20px;
+}
+
+#footer:hover{
+    outline: var(--white) solid 3px;
+}
+
+.footer-column-container{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.footer-title, .footer-link{
+    margin: 0;
+}
+
+.footer-title{
+    font-weight: 700;
+}
+
+.footer-link{
+    cursor: pointer;
+    transition: transform 100ms ease-out;
+    
+}
+
+.footer-link:hover{
+    text-decoration: underline;
+}
+
+.footer-form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: auto !important;
+}
+
+.footer-form-title{
+    font-weight: 700;
+}
+
+.form-input-container{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.form-input-container input{
+    outline: none;
+    padding: 4px 8px 4px 1px !important;
+}
+
+.form-input-container button{
+    border: none;
+    background-color: var(--white);
+    color: #2C2C2C;
+    transition: background-color 300ms ease-out, color 300ms ease-out;
+    padding: 5px 8px 5px 8px !important;
+}
+
+.form-input-container button:hover{
+    background-color: #2C2C2C;
+    color: var(--white);
+}
+
+/*
+.footer-map-container{
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+.map{
+    width: 96%;
+    height: 10em;
+}
+*/
+
+.right-zone{
+    z-index: 10;
+    position: relative;
+    grid-column: 2/3;
+    background-color: #2C2C2C;
+    box-sizing: border-box;
+    font-family: 'Inconsolata', monospace;
+}
+
+.right-zone-html{
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.right-zone-css {
+    padding: 40px;
+    height: 100vh;
+    background-color: #2C2C2C;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-direction: column;
+}
+
+#cssBtn {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: bold;
+}
+
+.right-title, .right-subtitle{
+    text-align: center;
+}
+
+.item{
+    background-color: #f2f4f333;
+    padding: 20px;
+    color: #f2f4f3;
+    transition: height 300ms ease-out;
+    width: 100%;
+    touch-action: none;
+    cursor: move;
+    /*animation: wiggle 0.5s infinite;*/
+}
+
+/* voir */
+.wiggling{
+    animation: wiggle 0.5s infinite;
+}
+
+.item-title{
+    color: inherit;
+}
+
+.item-description{
+    color: inherit;
+    height: auto;
+    transition: height 300ms ease-out;
+    overflow: hidden;
+    display: none;
+}
+
+.right-panel-button{
+    display: block;
+    position: absolute;
+    top: 0; left: -60px;
+    width: 60px; height: 60px;
+    background-color: #2C2C2C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: width 300ms ease-out, left 300ms ease-out;
+}
+
+.panel-second{
+    top: 60px;
+}
+
+.right-panel-button img{
+    aspect-ratio: 1/1;
+    height: 100%;
+}
+
+.panel-not-active{
+    background-color: #7f7f7f;
+    transition: background-color 300ms ease-out, opacity 300ms ease-out;
+    opacity: 0.5;
+}
+
+.panel-not-active:hover{
+    background-color: #2C2C2C;
+    opacity: 1;
+}
+
+@keyframes appear{
+    0%{
+        transform: scale(1.5);
+    }
+    75%{
+        transform: scale(1);
+        border: none;
+    }
+    80%{
+        border: solid red 50px outset;
+        
+    }
+    100%{
+        border: none;
+    }
+}
+
+
+/* ------------------ CSS SETTINGS ------------------ */
+button {
+    cursor: pointer;
+}
+
+.spec  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.3em;
+}
+
+.spec > button 
+{
+    margin: 0 5px;
+    color: black;
+    padding: 0 5px;
+    white-space: nowrap;
+}
+
+
+.spec > .btn-square
+{
+    height: 20px;
+    width: 20px;
+    overflow: visible;
+    border: none;
+    cursor: pointer;
+}
+
+.spec > .btn-text {
+    background-color: var(--white);
+    padding: 0.1em 0.3em;
+    border: none
+}
+
+.spec > .text 
+{
+    margin-left: 1.5em;
+    color: #8FCAF5;
+    white-space: nowrap;
+}
+
+.spec > input[type="range"] 
+{
+    width: 7em;
+    margin-left: 1em;
+}
+
+.property .spec button[selected] 
+{
+    outline: red solid 2px;
+}
+.property {
+    font-size: 1.3em;
+}
+
+.property > p {
+    color: #d2bb85;
+    font-weight: bold;
+}
+
+@keyframes wiggle {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}

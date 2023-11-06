@@ -1,10 +1,14 @@
-const htmlZone = document.getElementById("right-zone-html")
-const cssZone = document.getElementById("right-zone-css")
+const htmlZone = document.querySelector(".html")
+const cssZone = document.querySelector(".css")
 
-const blocButton = document.getElementById("bloc-panel-button")
-const styleButton = document.getElementById("style-panel-button")
+const blocButton = document.getElementById("bloc-btn")
+const styleButton = document.getElementById("style-btn")
+
+const rightZone = document.querySelector(".right-zone")
+const appContainer = document.querySelector(".App")
 
 const changePanel = (goTo) => {
+    displayRightZone()
     if (goTo === "style"){
         //Retirer la classe hidden à la zone CSS
         cssZone.classList.remove("hidden")
@@ -27,3 +31,22 @@ const changePanel = (goTo) => {
         styleButton.classList.add("panel-not-active")
     }
 }
+
+
+function hideRightZone() {
+    rightZone.classList.add("slided");
+    appContainer.style = "grid-template-columns: 1fr 0fr";
+    setTimeout(() => appContainer.style = "grid-template-columns: 1fr 0", 200);
+}
+function displayRightZone() {
+    appContainer.style = "";
+    rightZone.classList.remove("slided");
+
+}
+
+document.querySelectorAll('.outline-hover').forEach(element => {
+    element.addEventListener('click', () => {
+        changePanel('style');
+    });
+  });
+  

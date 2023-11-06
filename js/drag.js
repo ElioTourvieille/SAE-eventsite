@@ -1,6 +1,7 @@
 let firstMoved = false;
 const webPage = document.querySelector(".web-page");
 const moveHint = document.querySelector(".move-hint");
+let article2Moved = false;
 
 interact('.dragable')
     .draggable({
@@ -28,8 +29,20 @@ interact('.dragable')
                 dragMoveListener(event);
                 return;
             };
-            if ( isDescendant(document.querySelector(".left-zone"), endTarget) ) {
-            // if (endTarget.className == "web-page" || endTarget.className == "move-hint" || endTarget.className == "") {
+            if ( isDescendant(document.querySelector(".left-zone"), endTarget)) {
+                console.log(target)
+                if (/img/.test(target.getAttribute("data-for")) && !article2Moved) {
+                    Toastify({
+                        text: "L'image est contenue dans l'article 2. Ajoute-le d'abord.",
+                        duration: 3500,
+                        gravity: "top", // `top` or `bottom`
+                        position: "right", // `left`, `center` or `right`
+                        className: "toast",
+                        style: {  },
+                    }).showToast();
+                    return;
+                }
+                if (/article-2/.test(target.getAttribute("data-for"))) article2Moved = true;
                 // change between first page (ask to move) and webpage for the first time
                 if (!firstMoved) {
                     firstMoved = true;
@@ -42,22 +55,8 @@ interact('.dragable')
                 if (forDisplay === "header"){
                     typeIt.go()
                 }
-                // check if multiple element can be added
-                if (target.getAttribute("data-number")) { // multiple added handle the number
-                    let nb = parseInt(target.getAttribute("data-number")); // get the number
-                    let forDisplayBase = forDisplay + "-";
-                    while (document.getElementById(forDisplay + "-" + (nb + 1))) {
-                        appendElement(forDisplayBase + nb)
-                        nb++
-                    }
-                    target.removeAttribute("data-number");
-                    target.classList.add("hidden");
-                    target.classList.remove("dragable");
-                    forDisplay += "-" + nb;
-                } else { // only one remove just after dragged
-                    target.classList.remove("dragable");
-                    target.classList.add('hidden');
-                }
+                target.classList.remove("dragable");
+                target.classList.add('hidden');
                 // everytime add the toDisplay
                 if (document.getElementById(forDisplay)) {
                     appendElement(forDisplay)

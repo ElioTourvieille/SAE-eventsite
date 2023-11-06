@@ -1,12 +1,12 @@
-var konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-var konamiCodePosition = 0;
+let konamiCode = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
+let konamiCodePosition = 0;
 
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", e => {
     if (e.key === konamiCode[konamiCodePosition]) {
         konamiCodePosition++;
         if (konamiCodePosition === konamiCode.length) {
             konamiCodePosition = 0;
-            lancerConfettis(); // Exécute la fonction lancerConfettis() si le code est correct
+            launchConfetti(); // Exécute la fonction lancerConfettis() si le code est correct
         }
     } else {
         konamiCodePosition = 0;
@@ -14,15 +14,12 @@ document.addEventListener("keydown", function(e) {
 });
 
 
-function lancerConfettis() {
-    var end = Date.now() + (2 * 1000); // Les confettis exploseront pendant 15 secondes
+function launchConfetti() {
+    let end = Date.now() + (2 * 1000); // Les confettis exploseront pendant 15 secondes
 
-    (function frame() {
+    function frame() {
         // Si le temps est écoulé, arrête l'animation
-        if (Date.now() > end) {
-            return;
-        }
-
+        if (Date.now() > end) return;
         // Génère un confetti à chaque frame
         confetti({
             particleCount: 5, // Nombre de confettis à générer à chaque frame
@@ -32,5 +29,6 @@ function lancerConfettis() {
 
         // Planifie la prochaine frame
         requestAnimationFrame(frame);
-    }());
+    };
+    requestAnimationFrame(frame);
 }
